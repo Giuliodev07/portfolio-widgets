@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<style>
+  body { 
+    background: #191919; 
+    margin: 0; 
+    padding: 10px; 
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow: hidden;
+  }
+
+  .skills-card { 
+    background: #111111; 
+    border: 1px solid #222; 
+    border-radius: 20px; 
+    padding: 22px; 
+  }
+
+  .header { 
+    color: #00ffcc; 
+    font-size: 10px; 
+    font-weight: 800; 
+    letter-spacing: 2px; 
+    margin-bottom: 20px; 
+    text-transform: uppercase; 
+  }
+
+  .section-label { 
+    font-size: 9px; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    color: #00ffcc; 
+    margin-bottom: 8px; 
+    opacity: 0.8; 
+  }
+
+  .skill-item { margin-bottom: 14px; }
+
+  .info { 
+    color: #efefef; 
+    font-size: 11px; 
+    margin-bottom: 5px; 
+    font-weight: 500; 
+  }
+
+  .bar { 
+    background: rgba(255,255,255,0.05); 
+    height: 4px; 
+    border-radius: 10px; 
+    width: 100%; 
+    position: relative; 
+    overflow: hidden; 
+  }
+
+  .fill { 
+    height: 100%; 
+    border-radius: 10px; 
+    width: 0%; 
+    animation: slideIn 2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards; 
+  }
+
+  /* Colori Categorie */
+  .fill.vfx { background: linear-gradient(90deg, #00ffcc, #007aff); }
+  .fill.motion { background: linear-gradient(90deg, #2383e2, #5856d6); }
+  .fill.ai { background: linear-gradient(90deg, #ff00ff, #ff90e8); }
+
+  @keyframes slideIn { from { width: 0%; } }
+
+  /* Classi per le percentuali */
+  .w95 { width: 95% !important; } 
+  .w90 { width: 90% !important; } 
+  .w85 { width: 85% !important; } 
+  .w80 { width: 80% !important; } 
+  .w75 { width: 75% !important; }
+</style>
+</head>
+<body>
+  <div class="skills-card">
+    <div class="header">CORE COMPETENCIES</div>
+    
+    <div class="section-label">VFX & CG</div>
+    <div class="skill-item">
+      <div class="info">VFX & Compositing</div>
+      <div class="bar"><div class="fill vfx w95"></div></div>
+    </div>
+    <div class="skill-item">
+      <div class="info">CG (Computer Graphics)</div>
+      <div class="bar"><div class="fill vfx w90"></div></div>
+    </div>
+    <div class="skill-item">
+      <div class="info">FX & Procedural</div>
+      <div class="bar"><div class="fill vfx w75"></div></div>
+    </div>
+
+    <div class="section-label" style="color:#2383e2; margin-top:20px;">2D, MOTION & DESIGN</div>
+    <div class="skill-item">
+      <div class="info">Motion Graphics</div>
+      <div class="bar"><div class="fill motion w90"></div></div>
+    </div>
+    <div class="skill-item">
+      <div class="info">Immersive Experience Design</div>
+      <div class="bar"><div class="fill motion w90"></div></div>
+    </div>
+
+    <div class="section-label" style="color:#ff00ff; margin-top:20px;">AI INNOVATION</div>
+    <div class="skill-item">
+      <div class="info">AI Workflow</div>
+      <div class="bar"><div class="fill ai w95"></div></div>
+    </div>
+  </div>
+</body>
+</html>
