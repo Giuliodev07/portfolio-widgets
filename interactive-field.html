@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<style>
+  body { 
+    background: #191919; 
+    margin: 0; 
+    padding: 0; 
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Altezza ridotta per stare sotto il footer */
+    cursor: crosshair;
+  }
+
+  #canvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  .label {
+    position: absolute;
+    color: #333;
+    font-size: 8px;
+    letter-spacing: 3px;
+    pointer-events: none;
+    text-transform: uppercase;
+    font-family: sans-serif;
+  }
+</style>
+</head>
+<body>
+  <div class="label">Interactive Neural Field</div>
+  <canvas id="canvas"></canvas>
+
+<script>
+const canvas = document.getElementById('canvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+
+function resize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resize);
+resize();
+
+class Particle {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.size = Math.random() * 2 + 1;
+        this.speedX = Math.random() * 2 - 1;
+        this.speedY = Math.random() * 2 - 1;
+        this.color = '#00ffcc';
+        this.opacity = 1;
+    }
+    update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        this.opacity -= 0.02;
+    }
+    draw() {
+        ctx.globalAlpha = this.opacity;
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+    }
+}
+
+function handleParticles() {
+    for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+        if (particles[i].opacity <= 0) {
+            particles.splice(i, 1);
+            i--;
+        }
+    }
+}
+
+window.addEventListener('mousemove', function(e) {
+    const rect = canvas.getBoundingClientRect();
+    for(let i=0; i<3; i++) {
+        particles.push(new Particle(e.clientX - rect.left, e.clientY - rect.top));
+    }
+});
+
+function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Disegna linee di connessione tra particelle vicine (effetto Plexus)
+    ctx.strokeStyle = 'rgba(0, 255, 204, 0.1)';
+    for (let a = 0; a < particles.length; a++) {
+        for (let b = a; b < particles.length; b++) {
+            let dx = particles[a].x - particles[b].x;
+            let dy = particles[a].y - particles[b].y;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+            if (distance < 50) {
+                ctx.beginPath();
+                ctx.moveTo(particles[a].x, particles[a].y);
+                ctx.lineTo(particles[b].x, particles[b].y);
+                ctx.stroke();
+            }
+        }
+    }
+    handleParticles();
+    requestAnimationFrame(animate);
+}
+animate();
+</script>
+</body>
+</html>
