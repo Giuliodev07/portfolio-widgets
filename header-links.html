@@ -8,8 +8,13 @@
     margin: 0; 
     padding: 5px; 
     font-family: -apple-system, system-ui, sans-serif;
+  }
+
+  .nav-container {
     display: flex;
     gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
   }
 
   .nav-button { 
@@ -30,7 +35,6 @@
     white-space: nowrap;
   }
 
-  /* Effetto Hover Generale */
   .nav-button:hover { 
     color: #00ffcc; 
     border-color: #00ffcc; 
@@ -39,7 +43,7 @@
     box-shadow: 0 4px 15px rgba(0, 255, 204, 0.1);
   }
 
-  /* Stile Speciale per lo Showreel */
+  /* Stile Showreel */
   .reel-btn {
     background: linear-gradient(90deg, #1c1c1c, #111);
     border: 1px solid #00ffcc;
@@ -52,21 +56,36 @@
     box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
   }
 
-  /* Container per Notion */
-  .nav-container {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
+  .icon { margin-right: 8px; font-size: 12px; }
 </style>
 </head>
 <body>
+
   <div class="nav-container">
-    <a href="https://www.youtube.com/watch?v=V9o9E0CeUAI" target="_blank" class="nav-button reel-btn">▶ SHOWREEL 2026</a>
+    <a href="IL_TUO_LINK_VIDEO_QUI" target="_blank" class="nav-button reel-btn">
+      <span class="icon">▶</span> SHOWREEL 2026
+    </a>
     
-    <a href="https://www.linkedin.com/in/giulio-casellato/" target="_blank" class="nav-button">LINKEDIN</a>
+    <a href="https://www.linkedin.com/in/giulio-casellato/?locale=en_US" target="_blank" class="nav-button">
+      LINKEDIN
+    </a>
     
-    <a href="https://giuliodev07.github.io/portfolio-widgets/email.html" target="_blank" class="nav-button">
+    <a onclick="openEmail()" class="nav-button">
+      <span class="icon">✉</span> CONTATTO EMAIL
+    </a>
   </div>
+
+  <script>
+    function openEmail() {
+      // Apriamo il mailto in una nuova finestra/scheda per bypassare il blocco di Notion
+      const emailWindow = window.open("mailto:giulio.casellato98@gmail.com", "_blank");
+      
+      // Se il browser ha aperto una scheda bianca, la chiudiamo dopo un istante
+      if (emailWindow) {
+        setTimeout(() => emailWindow.close(), 500);
+      }
+    }
+  </script>
+
 </body>
 </html>
