@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giulio Casellato | VFX Artist Portfolio</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background-color: #191919;
+        }
+
+        /* Il contenitore che ospita Notion */
+        .notion-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Overlay per nascondere i tasti di Notion in alto (opzionale) */
+        .header-shield {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 45px;
+            background: transparent;
+            z-index: 10;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-shield"></div>
+    
+    <div class="notion-wrapper">
+        <iframe 
+            src="https://TUO_LINK_DI_NOTION_QUI" 
+            allow="clipboard-write"
+            id="notion-frame">
+        </iframe>
+    </div>
+
+</body>
+</html>
