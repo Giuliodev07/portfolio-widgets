@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { background: #191919; margin: 0; padding: 10px; font-family: -apple-system, system-ui, sans-serif; overflow: hidden; }
+  .toolset-card { background: #111; border: 1px solid #222; border-radius: 20px; padding: 22px; }
+  .header { color: #00ffcc; font-size: 10px; font-weight: 800; letter-spacing: 2px; margin-bottom: 15px; text-transform: uppercase; }
+  .cat-label { font-size: 9px; text-transform: uppercase; letter-spacing: 1px; color: #00ffcc; margin: 15px 0 8px 0; opacity: 0.7; }
+  .cat-label.blue { color: #2383e2; }
+  .cat-label.pink { color: #ff00ff; }
+  .grid { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { background: #1c1c1c; color: #eee; font-size: 11px; padding: 5px 12px; border-radius: 6px; border: 1px solid #2a2a2a; white-space: nowrap; transition: 0.2s; }
+  .tag:hover { border-color: #444; background: #222; }
+</style>
+</head>
+<body>
+  <div class="toolset-card">
+    <div class="header">SOFTWARE STACK</div>
+    <div class="cat-label">Editing & 2D</div>
+    <div class="grid">
+      <span class="tag">Photoshop</span><span class="tag">After Effects</span>
+      <span class="tag">Animate</span><span class="tag">Premiere</span><span class="tag">DaVinci</span>
+    </div>
+    <div class="cat-label blue">3D & VFX</div>
+    <div class="grid">
+      <span class="tag">Maya</span><span class="tag">Houdini</span><span class="tag">Blender</span>
+      <span class="tag">SpeedTree</span><span class="tag">Substance</span><span class="tag">Unreal</span>
+      <span class="tag">TouchDesigner</span><span class="tag">Arena</span><span class="tag">Arnold</span>
+    </div>
+    <div class="cat-label pink">AI Tools</div>
+    <div class="grid">
+      <span class="tag">Stable Diffusion</span><span class="tag">ComfyUI</span>
+      <span class="tag">Freepik AI</span><span class="tag">Higgsfield</span>
+    </div>
+  </div>
+</body>
+</html>
