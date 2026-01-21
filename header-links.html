@@ -75,7 +75,7 @@
     </a>
     
     <div onclick="copyEmail(this)" class="nav-button">
-      <span class="icon">✉</span> <span id="email-label">COPIA EMAIL</span>
+      <span class="icon">✉</span> <span id="email-label">giulio.casellato98@gmail.com</span>
     </div>
   </div>
 
@@ -88,7 +88,7 @@
       navigator.clipboard.writeText(email).then(() => {
         // Feedback visivo
         const originalText = label.innerText;
-        label.innerText = "COPIATA!";
+        label.innerText = "COPIED!";
         element.classList.add('copied');
         
         // Ripristina dopo 2 secondi
