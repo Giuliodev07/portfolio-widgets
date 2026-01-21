@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<style>
+  body { 
+    background: #191919; 
+    margin: 0; 
+    padding: 5px; 
+    font-family: -apple-system, system-ui, sans-serif;
+    display: flex;
+    gap: 10px;
+  }
+
+  .nav-button { 
+    color: #efefef; 
+    text-decoration: none; 
+    font-size: 11px; 
+    letter-spacing: 1px; 
+    padding: 8px 18px; 
+    border-radius: 8px; 
+    background: #1c1c1c; 
+    border: 1px solid #2a2a2a; 
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  /* Effetto Hover Generale */
+  .nav-button:hover { 
+    color: #00ffcc; 
+    border-color: #00ffcc; 
+    background: #151515; 
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 255, 204, 0.1);
+  }
+
+  /* Stile Speciale per lo Showreel */
+  .reel-btn {
+    background: linear-gradient(90deg, #1c1c1c, #111);
+    border: 1px solid #00ffcc;
+    color: #00ffcc;
+  }
+
+  .reel-btn:hover {
+    background: #00ffcc;
+    color: #111;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+  }
+
+  /* Container per Notion */
+  .nav-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+</style>
+</head>
+<body>
+  <div class="nav-container">
+    <a href="IL_TUO_LINK_VIDEO_QUI" target="_blank" class="nav-button reel-btn">▶ SHOWREEL 2026</a>
+    
+    <a href="https://www.linkedin.com/in/giulio-casellato/?locale=en_US" target="_blank" class="nav-button">LINKEDIN</a>
+    
+    <a href="mailto:giulio.casellato98@gmail.com" class="nav-button">CONTATTO EMAIL</a>
+  </div>
+</body>
+</html>
