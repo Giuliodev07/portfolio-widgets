@@ -3,57 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giulio Casellato | VFX Artist Portfolio</title>
+    <title>Giulio Casellato | VFX Portfolio</title>
     <style>
-        body, html {
+        :root {
+            --bg-color: #191919;
+            --text-color: #ffffff;
+            --accent: #37352f;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.6;
+        }
+
+        .container {
             width: 100%;
+            max-width: 900px;
+            padding: 40px 20px;
+        }
+
+        /* Header Style */
+        .header-widget {
+            width: 100%;
+            height: 150px; /* Regola in base al tuo widget */
+            border: none;
+            margin-bottom: 30px;
+        }
+
+        /* Sezione Video Showreel */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            height: 0;
+            margin-bottom: 40px;
+            background: #000;
+            border-radius: 8px;
             overflow: hidden;
-            background-color: #191919;
         }
 
-        /* Il contenitore che ospita Notion */
-        .notion-wrapper {
+        .video-container iframe {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             border: none;
         }
 
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
+        /* Griglia Skills/Widget */
+        .widgets-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
         }
 
-        /* Overlay per nascondere i tasti di Notion in alto (opzionale) */
-        .header-shield {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 45px;
-            background: transparent;
-            z-index: 10;
-            pointer-events: none;
+        @media (max-width: 600px) {
+            .widgets-grid { grid-template-columns: 1fr; }
         }
+
+        .widget-box {
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            overflow: hidden;
+            height: 300px; /* Regola l'altezza */
+        }
+
+        iframe { width: 100%; height: 100%; border: none; }
     </style>
 </head>
 <body>
 
-    <div class="header-shield"></div>
+<div class="container">
     
-    <div class="notion-wrapper">
-        <iframe 
-            src="https://sunset-cup-ffe.notion.site/GIULIO-CASELLATO-2eb5af54d1c480e696f3e0c4a96e67f1?source=copy_link" 
-            allow="clipboard-write"
-            id="notion-frame">
-        </iframe>
+    <iframe src="https://giuliodev07.github.io/portfolio-widgets/header.html" class="header-widget"></iframe>
+
+    <h1>VFX Showreel 2024</h1>
+    <div class="video-container">
+        <iframe src="https://player.vimeo.com/video/IL_TUO_ID_VIDEO" allowfullscreen></iframe>
     </div>
+
+    <div class="widgets-grid">
+        <div class="widget-box">
+            <iframe src="https://giuliodev07.github.io/portfolio-widgets/software.html"></iframe>
+        </div>
+        
+        <div class="widget-box">
+            <iframe src="https://giuliodev07.github.io/portfolio-widgets/footer.html"></iframe>
+        </div>
+    </div>
+
+</div>
 
 </body>
 </html>
